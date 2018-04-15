@@ -1,0 +1,30 @@
+
+
+## Metodo
+criar trechos de codigos e sharea para reutilizar o codigo
+
+A palavra utilizada para definir um método é o "def"
+```
+irb(main):006:0> require 'irb/completion'
+irb(main):007:0> def diga_ola
+irb(main):008:1>   puts "Ola"
+irb(main):009:1> end
+=> :diga_ola
+irb(main):010:0> diga_ola
+Ola
+=> nil
+irb(main):011:0>
+```
+Criando um metodo que recebe 1 parâmetro
+```
+irb(main):011:0> def diga_ola alguem
+irb(main):012:1>   puts "Ola #{alguem}"
+irb(main):013:1> end
+=> :diga_ola
+irb(main):014:0> diga_ola "Rodrigo Floriano de Souza"
+Ola Rodrigo Floriano de Souza
+=> nil
+```
+
+## Scripts
+

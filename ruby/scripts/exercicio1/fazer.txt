@@ -1,0 +1,5 @@
+# validacao de parametros 
+
+1 - em um arquivo .rb, escreva um metodo que faça validação dos tipos(classes) do objeto, um parametro apenas.  Ex. se for texto, faça X; se for numero faça Y     se for boleano, faça Z; por default, faça B. 
+
+2 - em um aquivo .rb, simule a execução de cada validação

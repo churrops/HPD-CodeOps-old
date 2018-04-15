@@ -1,0 +1,173 @@
+Aula - Mateus 
+Data: 04/04/2018
+
+Documentação oficial: https://ruby-doc.org/
+
+Ideia do Ruby
+- Simples
+- declarativa 
+- Facil de interpretar e facil de escrever
+- Diferente
+- Linguagem para criar app web, webservices SOAP/REST
+- Esta na linha do Python no quesito simplicidade
+
+O que é Rails
+
+É um Framework, caixa de ferramentas para desenvolver aplicação web, ele alavancou o Ruby.
+
+Site oficial: https://www.ruby-lang.org/en/
+
+Default no MACOS desde 2013/2014
+
+Versão atual: 2.5.1
+
+Tres grandes mudanças versoes de Ruby
+Até 1.8.x
+Até 1.9.x
+Versão 2.x
+
+# Instalação
+apt-get install ruby
+yum install ruby -y
+
+RVM - Ruby Version Manager, gerenciador de versões de ruby
+RBENV - Similar ao RVM
+
+# Ruby
+
+irb -  Shell de Ruby
+http://tryruby.org
+
+➜  ruby irb
+irb(main):001:0>
+
+Significado:
+	irb - nome do programa
+	(main) - nome da thread do ruby que vai interpretar o que vc vai escrever
+	:001 - numero de linhas
+	:0> - se tiver dentro de um bloco de codigo, é a linha que vc esta daquele bloco
+
+# Hello world
+
+Metodo/função (trecho de codigo que vc chama e faz alguma coisa)
+
+puts - metodo que recebe 1 parametro, similar ao echo
+
+	irb(main):016:0> puts 1
+	1
+	=> nil - executei sua ultima chamada e n tenho mais nada pra fazer
+
+## Declaracao de variaveis
+
+nome = "rodrigo"
+puts "nome" - imprime o texto rodrigo
+puts nome - imprime a variavel
+
+Por convencao do ruby, o nome das variaveis
+A Classe "class" é a classe pai do Ruby
+
+### Tipos de dados
+https://ruby-doc.org/core-2.4.0/String.html
+
+String - nome = "meu nome"
+irb(main):027:0> puts nome.class
+String
+=> nil
+
+irb(main):032:0> idade = 10
+=> 10
+irb(main):033:0> puts idade.class
+Integer
+=> nil
+
+Métodos de string
+	captilize
+
+Primeira letra maiuscula e todas as outras minusculas
+irb(main):052:0> puts hostname.capitalize
+Srvxpto10
+
+irb(main):052:0> puts hostname.capitalize!
+Srvxpto10
+
+
+texto, numerico, data, decimal
+
+### Integer/Fixnum
+https://ruby-doc.org/core-2.4.0/Integer.html
+
+### Listas de valores - Array
+https://ruby-doc.org/core-2.4.1/Array.html
+
+irb(main):039:0> hostnames = ["srv1","srv2","srv3","srv4"]
+
+include - perguntar se existe um valor especifico dentro do Array
+push - adiciona coisas no final da lista
+pop - remove o ultimo - irb(main):037:0> hostnames.pop
+puts delete
+
+### Hashes
+
+Forma 1 de definir 1 hash
+
+irb(main):039:0> servers = {hostname: "srv1", ip: "192.168.10.1, fqdn: ""srv1.churrops.com"}
+=> {:hostname=>"srv1", :ip=>"192.168.10.1, fqdn: srv1.churrops.com"}
+
+Forma 2 de definir 
+
+=> {:hostname=>"srv1", :ip=>"192.168.10.1, fqdn: srv1.churrops.com"}
+=> {:hostname=>"srv1", :ip=>"192.168.10.1, fqdn: srv1.churrops.com"}
+=> {:hostname=>"srv1", :ip=>"192.168.10.1, fqdn: srv1.churrops.com"}
+
+Query
+irb(main):043:0> puts server[:hostname]
+irb(main):043:0> puts server[:ip]
+
+Lista com hash
+
+irb(main):057:0> servers = [{:hostname=>"srv_1", :ip=>"127.0.0.1", :fqdn=>"srv1.domain.intranet"}, {:hostname=>"srv_2", :ip=>"127.0.0.2", :fqdn=>"srv2.domain.intranet"}, {:hostname=>"srv_3", :ip=>"127.0.0.3", :fqdn=>"srv3.domain.intranet"}]
+
+Classe Symbol - Diferença de string para simbolo ":" , uso de memoria, melhor performance, usado especificamente pra tag, é sempre declarado com dois pontos no começo.. :hostname, :ip, :teste, melhor pra palavra única
+
+Mesmo object ID
+
+irb(main):069:0> nome = :matheus
+=> :matheus
+irb(main):070:0> teste = :matheus
+=> :matheus
+irb(main):071:0> puts nome.object_id
+1284508
+=> nil
+irb(main):072:0> puts teste.object_id
+1284508
+=> nil
+
+## Metodo .each
+Iteração dentro das listas
+O each devolve cada posicao
+
+irb(main):001:0> usuarios = ["leandro","andre","ronald","rodrigo"]
+=> ["leandro", "andre", "ronald", "rodrigo"]
+irb(main):002:0> usuarios.each do |usuarios|
+irb(main):003:1* puts "Ola #{usuarios}"
+irb(main):004:1> end
+Ola leandro
+Ola andre
+Ola ronald
+Ola rodrigo
+=> ["leandro", "andre", "ronald", "rodrigo"]
+
+
+irb(main):014:0> user = { nome: "rodrigo", user_ativo: :status}
+=> {:nome=>"rodrigo", :user_ativo=>:status}
+irb(main):015:0> user = { nome: "rodrigo", user_ativo: :status}.each do |k, v| puts "#{k} => #{v}" end
+nome => rodrigo
+user_ativo => status
+=> {:nome=>"rodrigo", :user_ativo=>:status}
+
+Habilitar auto complete: require 'irb/completion'
+
+
+users = [{nome: "jhones", user_ativo: :status},{ nome: "daniel", user_ativo: :on }]
+users.each do |user|                                       puts "Nome: #{user[:nome]}"                           puts "Ativo?  #{user[:user_ativo]}"
+end
