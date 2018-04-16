@@ -2,4 +2,4 @@
 
 require './metodos'
 
-exercicio1("1")
+churrops(100.0)
